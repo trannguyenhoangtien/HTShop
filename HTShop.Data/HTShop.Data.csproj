@@ -48,7 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HTShopDbContext.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201901211710116_InitialDB.cs" />
+    <Compile Include="Migrations\201901211710116_InitialDB.Designer.cs">
+      <DependentUpon>201901211710116_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901211716536_InitialDB1.cs" />
+    <Compile Include="Migrations\201901211716536_InitialDB1.Designer.cs">
+      <DependentUpon>201901211716536_InitialDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,6 +78,18 @@
       <Project>{00816d8c-d89e-4356-b232-7f5f29d441a3}</Project>
       <Name>HTShop.Comom</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HTShop.Model\HTShop.Model.csproj">
+      <Project>{fd37a2ba-b449-4c89-801a-bbfbe8b54b29}</Project>
+      <Name>HTShop.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901211710116_InitialDB.resx">
+      <DependentUpon>201901211710116_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901211716536_InitialDB1.resx">
+      <DependentUpon>201901211716536_InitialDB1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
