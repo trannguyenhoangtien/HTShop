@@ -10,7 +10,7 @@ namespace HTShop.Data
 {
     public class HTShopDbContext : DbContext
     {
-        public HTShopDbContext() : base("HTSHopConnection")
+        public HTShopDbContext() : base("HTShop")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
