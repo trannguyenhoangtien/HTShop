@@ -3,7 +3,7 @@ using HTShop.Model.Models;
 
 namespace HTShop.Data.Repositories
 {
-    public interface ISystemConfigRepository
+    public interface ISystemConfigRepository : IRepository<SystemConfig>
     {
     }
 

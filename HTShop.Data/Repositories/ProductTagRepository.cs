@@ -3,7 +3,7 @@ using HTShop.Model.Models;
 
 namespace HTShop.Data.Repositories
 {
-    public interface IProductTagRepository
+    public interface IProductTagRepository : IRepository<ProductTag>
     {
     }
 

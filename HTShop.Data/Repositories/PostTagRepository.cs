@@ -3,7 +3,7 @@ using HTShop.Model.Models;
 
 namespace HTShop.Data.Repositories
 {
-    public interface IPostTagRepository
+    public interface IPostTagRepository : IRepository<PostTag>
     {
     }
 

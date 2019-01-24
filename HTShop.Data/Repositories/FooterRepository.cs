@@ -3,7 +3,7 @@ using HTShop.Model.Models;
 
 namespace HTShop.Data.Repositories
 {
-    public interface IFooterRepository
+    public interface IFooterRepository : IRepository<Footer>
     {
     }
 

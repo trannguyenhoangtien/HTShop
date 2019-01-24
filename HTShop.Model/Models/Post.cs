@@ -42,6 +42,8 @@ namespace HTShop.Model.Models
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { get; set; }
 
+        public virtual IEnumerable<PostTag> PostTags { get; set; }
+
         public DateTime? CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime? UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

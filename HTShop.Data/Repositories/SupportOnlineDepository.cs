@@ -3,7 +3,7 @@ using HTShop.Model.Models;
 
 namespace HTShop.Data.Repositories
 {
-    public interface ISupportOnlineDepository
+    public interface ISupportOnlineDepository : IRepository<SupportOnline>
     {
     }
 
