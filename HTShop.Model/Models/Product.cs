@@ -11,7 +11,7 @@ using System.Xml.Linq;
 namespace HTShop.Model.Models
 {
     [Table("Products")]
-    public class Product : IAuditable, ISeoable, ISwitchable
+    public class Product : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -48,12 +48,6 @@ namespace HTShop.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual IEnumerable<ProductCategory> ProductCategories { get; set; }
-        public DateTime? CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UpdatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaKeyword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaDescripstion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
     }
 }

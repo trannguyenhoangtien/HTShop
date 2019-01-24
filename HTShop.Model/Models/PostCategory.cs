@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HTShop.Model.Models
 {
     [Table("PostCategories")]
-    public class PostCategory : IAuditable, ISeoable, ISwitchable
+    public class PostCategory : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -35,12 +35,6 @@ namespace HTShop.Model.Models
         public bool? HomeFlag { get; set; }
 
         public virtual IEnumerable<Post> Posts { get; set; }
-        public DateTime? CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UpdatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaKeyword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaDescripstion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
     }
 }

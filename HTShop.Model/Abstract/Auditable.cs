@@ -17,5 +17,13 @@ namespace HTShop.Model.Abstract
 
         [MaxLength(256)]
         public string UpdatedBy { get; set; }
+
+        [MaxLength(256)]
+        public string MetaKeyword { get; set; }
+
+        [MaxLength(256)]
+        public string MetaDescripstion { get; set; }
+
+        public bool Status { get; set; }
     }
 }

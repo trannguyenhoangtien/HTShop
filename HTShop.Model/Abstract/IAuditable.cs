@@ -11,5 +11,10 @@ namespace HTShop.Model.Abstract
         DateTime? UpdatedDate { get; set; }
 
         string UpdatedBy { get; set; }
+
+        string MetaKeyword { get; set; }
+        string MetaDescripstion { get; set; }
+
+        bool Status { get; set; }
     }
 }

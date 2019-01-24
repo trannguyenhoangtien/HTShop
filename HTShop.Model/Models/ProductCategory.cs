@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace HTShop.Model.Models
 {
     [Table("ProductCategories")]
-    public class ProductCategory : IAuditable, ISeoable, ISwitchable
+    public class ProductCategory : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -33,12 +33,6 @@ namespace HTShop.Model.Models
         public string Image { get; set; }
         public bool? HomeFlag { get; set; }
         public virtual IEnumerable<Product> Products { get; set; }
-        public DateTime? CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UpdatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaKeyword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string MetaDescripstion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
     }
 }
