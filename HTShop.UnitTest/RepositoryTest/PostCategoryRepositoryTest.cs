@@ -26,6 +26,13 @@ namespace HTShop.UnitTest.RepositoryTest
         }
 
         [TestMethod]
+        public void PostCategory_Repository_GetAll()
+        {
+            var list = postCategoryRepository.GetAll().ToList();
+            Assert.AreEqual(1, list.Count);
+        }
+
+        [TestMethod]
         public void PostCategory_Repository_Create()
         {
             PostCategory category = new PostCategory();
