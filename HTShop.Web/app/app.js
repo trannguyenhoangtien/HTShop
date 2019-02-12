@@ -1,6 +1,6 @@
 ﻿/// <reference path="../assets/admin/libs/angular/angular.js" />
 (function () {
-    angular.module('htshop', ['htshop.products', 'htshop.common']).config(config);
+    angular.module('htshop', ['htshop.products', 'htshop.product_categories', 'htshop.common']).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
