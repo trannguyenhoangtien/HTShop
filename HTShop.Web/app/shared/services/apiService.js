@@ -9,7 +9,7 @@
         }
 
         function get(url, params, success, failure) {
-            $http.get(url, params).them(function (result) {
+            $http.get(url, params).then(function (result) {
                 success(result);
             }), function (error) {
                 failure(error);
