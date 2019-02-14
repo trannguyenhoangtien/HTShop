@@ -35,6 +35,16 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa..." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" ng-click="search()" type="button">Tìm kiếm</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 5%">ID</th>
@@ -48,21 +58,21 @@
                             <td>{{item.Name}}</td>
                             <td>{{item.CreatedDate | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
                             <td><span class="badge bg-red" ng-class="{'badge bg-red':item.Status==false, 'badge bg-green':item.Status==true}">{{item.Status | statusFilter}}</span></td>
-                            <td><button class="btn btn-sm btn-primary"><i class="fa fa-pencil-square-o"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary"><i class="fa fa-pencil-square-o"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button>
+                            </td>
                         </tr>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    Tổng số bản ghi: {{totalCount}}
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer clearfix">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">&laquo;</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                </div>
+                <!-- /.box-body --
             </div>
             <!-- /.box -->
         </div>
