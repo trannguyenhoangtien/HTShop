@@ -14,6 +14,7 @@ using HTShop.Web.Infrastructure.Extensions;
 namespace HTShop.Web.Api
 {
     [RoutePrefix("api/PostCategory")]
+    [Authorize]
     public class PostCategoryController : ApiControllerBase
     {
         IPostCategoryService _postCategoryService;

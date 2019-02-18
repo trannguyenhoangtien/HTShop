@@ -26,7 +26,7 @@ namespace HTShop.Web.Infrastructure.Extensions
             postCategory.MetaKeyword = postCategoryVm.MetaKeyword;
             postCategory.MetaDescripstion = postCategoryVm.MetaDescripstion;
             postCategory.Status = postCategoryVm.Status;
-    }
+        }
 
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {
@@ -47,6 +47,25 @@ namespace HTShop.Web.Infrastructure.Extensions
             post.MetaKeyword = postVm.MetaKeyword;
             post.MetaDescripstion = postVm.MetaDescripstion;
             post.Status = postVm.Status;
+        }
+
+        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
+        {
+            productCategory.ID = productCategoryVm.ID;
+            productCategory.Name = productCategoryVm.Name;
+            productCategory.Alias = productCategoryVm.Alias;
+            productCategory.Description = productCategoryVm.Description;
+            productCategory.ParentID = productCategoryVm.ParentID;
+            productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
+            productCategory.Image = productCategoryVm.Image;
+            productCategory.HomeFlag = productCategoryVm.HomeFlag;
+            productCategory.CreatedBy = productCategoryVm.CreatedBy;
+            productCategory.CreatedDate = productCategoryVm.CreatedDate;
+            productCategory.UpdatedDate = productCategoryVm.UpdatedDate;
+            productCategory.UpdatedBy = productCategoryVm.UpdatedBy;
+            productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
+            productCategory.MetaDescripstion = productCategoryVm.MetaDescripstion;
+            productCategory.Status = productCategoryVm.Status;
         }
     }
 }

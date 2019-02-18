@@ -36,7 +36,7 @@
             //    FullName = "Trần Nguyễn Hoàng Tiến"
             //};
 
-            //manager.Create(user, "123!@#qwe");
+            //manager.Create(user, "123654");
 
             //if (!roleManager.Roles.Any())
             //{

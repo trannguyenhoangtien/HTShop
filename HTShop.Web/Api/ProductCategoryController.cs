@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using HTShop.Model.Models;
 using HTShop.Service;
 using HTShop.Web.Infrastructure.Core;
+using HTShop.Web.Infrastructure.Extensions;
 using HTShop.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,7 @@ using System.Web.Http;
 namespace HTShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         private IProductCategoryService _productCategoryService;
@@ -22,6 +25,7 @@ namespace HTShop.Web.Api
         }
 
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
@@ -43,6 +47,33 @@ namespace HTShop.Web.Api
                 };
 
                 var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+
+                return response;
+            });
+        }
+
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel productCategoryVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newProductCategory = new ProductCategory();
+                    newProductCategory.UpdateProductCategory(productCategoryVm);
+
+                    _productCategoryService.Add(newProductCategory);
+                    _productCategoryService.Save();
+
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
 
                 return response;
             });

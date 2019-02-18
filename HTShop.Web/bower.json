@@ -9,6 +9,8 @@
     "slimScroll": "~1.3.8",
     "fastclick": "~1.0.6",
     "ionicons": "~4.5.5",
-    "font-awesome": "~5.7.1"
+    "toastr": "~2.1.3",
+    "angular-local-stroage": "~0.7.1",
+    "angular-loading-bar": "~0.9.0"
   }
 }
