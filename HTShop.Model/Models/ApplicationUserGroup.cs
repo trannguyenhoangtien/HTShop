@@ -1,0 +1,24 @@
+﻿using HTShop.Model.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HTShop.Model.Abstract
+{
+    public class ApplicationUserGroup
+    {
+        [StringLength(128)]
+        [Key]
+        [Column(Order = 1)]
+        public string UserId { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
+        public int GroupId { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
+        [ForeignKey("GroupId")]
+        public virtual ApplicationGroup ApplicationGroup { get; set; }
+    }
+}
